@@ -1,0 +1,60 @@
+.navWrapper {
+  width: 100%;
+  display: flex;
+  border: 1px solid hsl(var(--off-white));
+  font-size: 1.25rem;
+}
+
+.navWrapper > * {
+  padding: 0.5rem;
+}
+
+.homeContainer {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  align-items: center;
+  justify-items: center;
+  border-right: 1px solid hsl(var(--off-white));
+}
+
+.homeBtn,
+.homeBtnFill {
+  grid-area: 1 / 1 / 2 / 2;
+  color: hsl(var(--grey-300));
+  transition: color 500ms, opacity 500ms;
+}
+
+.homeBtnFill,
+.homeContainer:hover > .homeBtn {
+  opacity: 0;
+}
+
+.homeContainer:hover > .homeBtn,
+.homeContainer:hover > .homeBtnFill {
+  cursor: pointer;
+  color: hsl(var(--off-white));
+}
+
+.homeContainer:hover > .homeBtnFill {
+  opacity: 1;
+}
+
+.breadCrumbs {
+  word-break: break-all;
+}
+
+.breadCrumbs a:hover {
+  text-decoration: underline;
+}
+
+.currPath {
+  color: hsl(var(--purple-50));
+}
+
+/* Subnabar styling (contains logout button) */
+.subNav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

@@ -1,0 +1,44 @@
+.btn {
+  --btn-theme: hsl(var(--off-white));
+  --btn-alt-theme: hsl(var(--black-700));
+
+  position: relative;
+  width: max-content;
+  padding: 0.45rem 1rem;
+  color: var(--btn-theme);
+  border: 2px solid var(--btn-theme);
+  border-radius: 0.35rem;
+  background: var(--btn-alt-theme);
+
+  transition: color 200ms, border 200ms;
+}
+
+.btn.altBdr {
+  border-color: var(--btn-alt-theme);
+}
+
+.btn > span {
+  display: block;
+  position: relative;
+  font-weight: 500;
+}
+
+.btn::before {
+  content: "";
+  width: 100%;
+  height: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: var(--btn-theme);
+  transition: height 200ms;
+}
+
+.btn:hover {
+  cursor: pointer;
+  color: var(--btn-alt-theme);
+}
+
+.btn:hover::before {
+  height: 100%;
+}

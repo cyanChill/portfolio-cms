@@ -1,0 +1,71 @@
+.toastContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid hsl(var(--off-white));
+  border-radius: 0.5rem;
+  background-color: hsl(var(--black-700));
+
+  opacity: 0;
+}
+
+.toastContainer.animateEnter {
+  animation: enter 500ms ease-in-out 1 forwards;
+}
+
+.toastContainer.animateLeave {
+  animation: leave 500ms ease-in-out 1 forwards;
+}
+
+.msgContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 1rem;
+  padding-right: 0.5rem;
+  border-right: 1px solid hsl(var(--off-white));
+}
+
+.icon {
+  font-size: 1.25rem;
+}
+
+.closeBtn {
+  padding: 1rem;
+  padding-left: 0.5rem;
+  background: transparent;
+  border: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: hsl(var(--purple-50));
+}
+
+.closeBtn:hover {
+  cursor: pointer;
+}
+
+@keyframes enter {
+  0% {
+    transform: scale(90%);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(100%);
+    opacity: 1;
+  }
+}
+
+@keyframes leave {
+  0% {
+    transform: scale(100%);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(90%);
+    opacity: 0;
+  }
+}

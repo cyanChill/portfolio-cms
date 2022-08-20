@@ -1,6 +1,6 @@
-import { Schema, model } from "mongoose";
+import mongoose from "mongoose";
 
-const PostSchema = new Schema({
+const PostSchema = new mongoose.Schema({
   title: { type: String, required: true },
   thumbnail: { type: String, required: true },
   content: { type: String, required: true },
@@ -8,6 +8,4 @@ const PostSchema = new Schema({
   isPublished: { type: Boolean, default: false, required: true },
 });
 
-const PostModel = model("Post", PostSchema);
-
-export default PostModel;
+export default mongoose.models.Post || mongoose.model("Post", PostSchema);
