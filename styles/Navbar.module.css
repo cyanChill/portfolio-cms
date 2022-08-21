@@ -1,7 +1,7 @@
 .navWrapper {
   width: 100%;
   display: flex;
-  border: 1px solid hsl(var(--off-white));
+  border: 2px solid hsl(var(--off-white));
   font-size: 1.25rem;
 }
 
@@ -10,12 +10,12 @@
 }
 
 .homeContainer {
-  height: 100%;
+  align-self: stretch;
   display: grid;
   grid-template-columns: 100%;
   align-items: center;
   justify-items: center;
-  border-right: 1px solid hsl(var(--off-white));
+  border-right: 2px solid hsl(var(--off-white));
 }
 
 .homeBtn,
@@ -57,4 +57,5 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  gap: 0.5rem;
 }

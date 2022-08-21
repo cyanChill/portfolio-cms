@@ -1,0 +1,30 @@
+.postWrapper {
+  width: 100%;
+}
+
+.postHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-block: 1rem;
+}
+
+.postHeader > h1 {
+  font-size: clamp(2.25rem, 7.5vw, 3rem);
+}
+
+.postHeader > p {
+  font-size: 0.9rem;
+  color: hsl(var(--grey-300));
+}
+
+.thumbnail {
+  min-height: 10rem;
+  height: 25vw;
+  max-height: 20rem;
+  overflow: hidden;
+}
+
+.postContent {
+  padding: 0.5rem;
+}

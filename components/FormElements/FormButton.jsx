@@ -13,7 +13,7 @@ const FormButton = ({ isLink, altBdr, className, children, ...rest }) => {
   } else {
     return (
       <button
-        className={`${styles.btn} ${className} ${altBdr && styles.sameBdr}`}
+        className={`${styles.btn} ${className} ${altBdr && styles.altBdr}`}
         {...rest}
       >
         {children}

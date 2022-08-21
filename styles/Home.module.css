@@ -1,0 +1,13 @@
+.contentContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 1.5rem;
+}
+
+@media (min-width: 568px) {
+  .contentContainer {
+    grid-template-columns: repeat(2, calc((100% - 1rem) / 2));
+    gap: 1rem;
+  }
+}

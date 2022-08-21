@@ -4,7 +4,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import dbConnect from "../../../utils/mongoConfig";
 import User from "../../../models/User";
 
-export default NextAuth({
+export const authOptions = {
   session: {
     strategy: "jwt",
   },
@@ -49,4 +49,9 @@ export default NextAuth({
     },
   },
   secret: process.env.NEXTAUTH_SECRET,
-});
+  pages: {
+    signIn: '/accounts/login'
+  }
+};
+
+export default NextAuth(authOptions);

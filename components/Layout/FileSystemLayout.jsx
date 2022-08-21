@@ -21,7 +21,7 @@ const FileSystemLayout = ({ children }) => {
             <SubNavbar />
           </>
         )}
-        {children}
+        <div className={styles.contentArea}>{children}</div>
       </div>
     </div>
   );
