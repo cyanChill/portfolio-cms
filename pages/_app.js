@@ -1,7 +1,7 @@
 import Head from "next/dist/shared/lib/head";
 import { SessionProvider } from "next-auth/react";
 import { Toaster } from "react-hot-toast";
-import "prismjs/themes/prism-tomorrow.css";
+import "../public/prism/prism.css";
 
 import "../styles/globals.css";
 import FileSystemLayout from "../components/Layout/FileSystemLayout";

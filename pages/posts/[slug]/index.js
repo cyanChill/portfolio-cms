@@ -1,7 +1,10 @@
-import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import parse from "html-react-parser";
+import Prism from 'prismjs'
+import "prismjs/components/prism-javascript";
+import "prismjs/components/prism-css";
+import "prismjs/components/prism-jsx";
 
 import styles from "../../../styles/PostDetail.module.css";
 import { customToast } from "../../../utils/customToast";
@@ -11,8 +14,7 @@ import StyledInput from "../../../components/FormElements/StyledInput";
 import Comment from "../../../components/Comment/Comment";
 
 const PostDetailPage = ({ post: jsonPost }) => {
-  const router = useRouter();
-
+  const blogContentRef = useRef(null);
   const [post, setPost] = useState(null);
   const [comments, setComments] = useState([]);
   const [name, setName] = useState("");
@@ -74,7 +76,12 @@ const PostDetailPage = ({ post: jsonPost }) => {
 
   useEffect(() => {
     if (post && post._id) getComments();
-  }, [post]);
+  }, [post]); // eslint-disable-line
+
+  useEffect(() => {
+    Prism.highlightAll();
+  }, [post])
+  
 
   if (!post) return <div>Loading...</div>;
 
@@ -98,11 +105,11 @@ const PostDetailPage = ({ post: jsonPost }) => {
           />
         </div>
 
-        <div className={styles.postContent}>{parse(post.content)}</div>
+        <div className={styles.postContent} ref={blogContentRef}>{parse(post.content)}</div>
       </div>
 
       <div className={styles.actions}>
-        <FormButton onClick={() => router.push(`/posts/${post.slug}/update`)}>
+        <FormButton isLink href={`/posts/${post.slug}/update`}>
           <span>Update Post</span>
         </FormButton>
       </div>

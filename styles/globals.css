@@ -46,6 +46,11 @@
   font-family: var(--font-family-mono);
 }
 
+pre, code {
+  font-family: var(--font-family-mono) !important;
+}
+
+
 body,
 #__next {
   min-height: 100vh;

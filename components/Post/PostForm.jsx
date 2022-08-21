@@ -25,6 +25,7 @@ const PostForm = ({ onSubmit, onDelete, postData }) => {
   }
 
   useEffect(() => {
+    setIsSubmitting(false);
     if (postData) {
       setTitle(postData.title ?? "");
       setSlug(postData.slug ?? "")
@@ -81,9 +82,10 @@ const PostForm = ({ onSubmit, onDelete, postData }) => {
               {text: 'HTML', value: 'html'},
               {text: 'JavaScript', value: 'javascript'},
               {text: 'CSS', value: 'css'},
-              {text: 'jsx', value: 'jsx'},
-              {text: 'typescript', value: 'typescript'},
+              {text: 'JSX', value: 'jsx'},
+              {text: 'TypeScript', value: 'typescript'},
             ],
+            codesample_global_prismjs: true,
             toolbar: 'undo redo | blocks | ' +
               'bold italic forecolor | alignleft aligncenter ' +
               'alignright alignjustify | bullist numlist outdent indent | ' +

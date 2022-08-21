@@ -42,3 +42,8 @@
 .btn:hover::before {
   height: 100%;
 }
+
+a.btn {
+  display: block;
+  text-align: center;
+}

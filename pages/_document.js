@@ -8,7 +8,18 @@ const Document = () => {
       <body>
         <Main />
         <NextScript />
-        <Script id="tinymce-script" src="/tinymce/tinymce.min.js" />
+        <Script
+          id="tinymce-script"
+          src="/tinymce/tinymce.min.js"
+          strategy="beforeInteractive"
+        />
+        <Script
+          id="prism-script"
+          type="text/javascript"
+          src="/prism/prism.js"
+          strategy="beforeInteractive"
+          data-manual
+        />
       </body>
     </Html>
   );
