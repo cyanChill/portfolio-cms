@@ -1,12 +1,24 @@
 .contentContainer {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contentContainer > p {
+  padding-bottom: 0.5rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.postsContainer {
   display: grid;
   grid-template-columns: 100%;
   gap: 1.5rem;
 }
 
 @media (min-width: 568px) {
-  .contentContainer {
+  .postsContainer {
     grid-template-columns: repeat(2, calc((100% - 1rem) / 2));
     gap: 1rem;
   }

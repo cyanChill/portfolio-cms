@@ -1,0 +1,32 @@
+.comment {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid hsl(var(--grey-300));
+}
+
+.comment > :first-child {
+  min-width: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-weight: 500;
+  font-size: clamp(0.9rem, 4vw, 1rem);
+}
+
+.commentContent {
+  word-break: break-all;
+  color: hsl(var(--grey-300));
+  font-size: clamp(0.8rem, 3vw, 0.9rem);
+}
+
+.delete {
+  color: hsl(var(--red-200));
+  text-align: end;
+  text-decoration: underline;
+}
+
+.delete:hover {
+  cursor: pointer;
+}

@@ -8,7 +8,7 @@ const FancyInput = ({ className, labelText, ...rest }) => {
   useEffect(() => {
     if (!rest.value) setIsFocused(false);
     else setIsFocused(true);
-  }, []); // eslint-disable-line
+  }, [rest.value]); // eslint-disable-line
 
   const onInputFocus = () => {
     setIsFocused(true);

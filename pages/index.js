@@ -7,13 +7,16 @@ import PostPreview from "../components/Post/PostPreview";
 const Home = () => {
   const { status } = useSession();
 
-  const [posts, setPosts] = useState([]);
+  const [unpubPosts, setUnpubPosts] = useState([]);
+  const [pubPosts, setPubPosts] = useState([]);
 
   const getPosts = async () => {
     try {
       const res = await fetch("/api/posts");
       const data = await res.json();
-      setPosts(data.posts || []);
+
+      setUnpubPosts(data.posts.filter(pst => !pst.isPublished))
+      setPubPosts(data.posts.filter(pst => pst.isPublished))
     } catch (err) {
       console.log("Something went wrong.");
     }
@@ -27,9 +30,19 @@ const Home = () => {
 
   return (
     <div className={styles.contentContainer}>
-      {posts.map((post) => (
-        <PostPreview key={post._id} postData={post} />
-      ))}
+      <p>Unpublished Posts:</p>
+      <div className={styles.postsContainer}>
+        {unpubPosts.map((post) => (
+          <PostPreview key={post._id} postData={post} />
+        ))}
+      </div>
+
+      <p>Published Posts:</p>
+      <div className={styles.postsContainer}>
+        {pubPosts.map((post) => (
+          <PostPreview key={post._id} postData={post} />
+        ))}
+      </div>
     </div>
   );
 };

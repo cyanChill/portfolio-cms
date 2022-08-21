@@ -5,7 +5,7 @@ import styles from "../../styles/PostForm.module.css";
 import FancyInput from "../FormElements/FancyInput";
 import FormButton from "../FormElements/FormButton";
 
-const PostForm = ({ onSubmit,  postData }) => {
+const PostForm = ({ onSubmit, onDelete, postData }) => {
   const editorRef = useRef(null);
   const [title, setTitle] = useState("");
   const [slug, setSlug] = useState("");
@@ -27,9 +27,10 @@ const PostForm = ({ onSubmit,  postData }) => {
   useEffect(() => {
     if (postData) {
       setTitle(postData.title ?? "");
+      setSlug(postData.slug ?? "")
       setExcerpt(postData.excerpt ?? "");
       setThumbnailUrl(postData.thumbnailUrl ?? "")
-      setIsPublished(postData.published ?? false);
+      setIsPublished(postData.isPublished ?? false);
     }
   }, [postData]);
 
@@ -110,6 +111,7 @@ const PostForm = ({ onSubmit,  postData }) => {
               "--btn-theme": "hsl(var(--black-700))",
               "--btn-alt-theme": "hsl(var(--red-200))",
             }}
+            onClick={onDelete}
           >
             <span>Delete Post</span>
           </FormButton>

@@ -17,7 +17,6 @@ const CreatePostPage = () => {
       const data = await res.json();
 
       if (res.ok) {
-        console.log(data.post);
         router.push('/');
       } else {
         // Something went wrong
@@ -30,7 +29,7 @@ const CreatePostPage = () => {
 
   return (
     <div className={styles.wrapper}>
-      <h1>Create a new post</h1>
+      <h1>Create a Bew Post</h1>
       <PostForm onSubmit={handleSubmit} />
     </div>
   );

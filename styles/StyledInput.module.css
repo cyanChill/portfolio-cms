@@ -1,0 +1,16 @@
+.styledInput {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.95rem;
+  border: 2px solid hsl(var(--grey-300));
+  color: hsl(var(--off-white));
+  background: transparent;
+  border-radius: 0.25rem;
+  outline: none;
+  /* Textarea Styling */
+  resize: none;
+}
+
+.styledInput:focus {
+  border-color: hsl(var(--off-white));
+}
