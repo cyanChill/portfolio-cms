@@ -2,6 +2,8 @@
 
 This is the CMS for my portfolio, which you can learn more from here: [https://github.com/cyanChill/portfolio](https://github.com/cyanChill/portfolio).
 
+> For images, we utilize links to images in Firebase Storage (in the future, I may add an option for uploading images directly into TinyMCE.)
+
 # Installation & Setup
 
 ## Environment Variables
