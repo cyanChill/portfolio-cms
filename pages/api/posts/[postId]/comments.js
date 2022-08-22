@@ -45,7 +45,7 @@ const AddComment = async (req, res) => {
     errors.push({ message: "Comment must be nonempty." });
   }
   if (errors.length !== 0) {
-    res.status(406).message({ message: "Errors found with input.", errors });
+    res.status(406).json({ message: "Errors found with input.", errors });
     return;
   }
 
