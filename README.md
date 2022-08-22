@@ -14,6 +14,13 @@ This is the CMS for my portfolio, which you can learn more from here: [https://g
 | `NEXTAUTH_URL`    | The URL of the site this will be hosted on (required for Next-Auth for authentication). |
 | `NEXTAUTH_SECRET` | Used to encrypt the JWT for NextAuth.                                                   |
 
+## CMS Accounts
+
+For the CMS, we utilize an "virtual accounts" to make sure that only the right people can access the CMS. To do this, in the MongoDB database, in the `users` collection, create a new **user** document with a `username` and a `password` field (the `password` should be unhashed).
+
+- You can create as many **users** as you like.
+- The `username` is case-sensitive when logging in.
+
 ## How to Run Locally
 
 First, run the development server:
