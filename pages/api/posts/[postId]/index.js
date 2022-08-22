@@ -24,7 +24,7 @@ const UpdatePost = async (req, res) => {
 
   const { postId } = req.query;
   const { title, excerpt, thumbnailUrl, content, isPublished } = req.body;
-  const slug = encodeURIComponent(req.body.slug)
+  const slug = encodeURIComponent(req.body.slug);
 
   // Input validation
   const errors = [];
@@ -37,12 +37,12 @@ const UpdatePost = async (req, res) => {
   if (!isValidHttpUrl(thumbnailUrl)) {
     errors.push({ message: "Thumbnail url must be a valid url." });
   }
-  const existingSlug = await Post.findOne({ slug: slug });
+  const existingSlug = await Post.findOne({ _id: { $ne: postId }, slug: slug });
   if (existingSlug) {
     errors.push({ message: "Slug has been used previously." });
   }
   if (errors.length !== 0) {
-    res.status(406).message({ message: "Errors found with input.", errors });
+    res.status(406).json({ message: "Errors found with input.", errors });
     return;
   }
 

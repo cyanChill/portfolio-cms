@@ -80,10 +80,11 @@ const PostForm = ({ onSubmit, onDelete, postData }) => {
             codesample_languages: [
               {text: 'HTML/XML', value: 'markup'},
               {text: 'HTML', value: 'html'},
-              {text: 'JavaScript', value: 'javascript'},
               {text: 'CSS', value: 'css'},
-              {text: 'JSX', value: 'jsx'},
+              {text: 'JavaScript', value: 'javascript'},
               {text: 'TypeScript', value: 'typescript'},
+              {text: 'JSX', value: 'jsx'},
+              {text: 'TSX', value: 'tsx'},
             ],
             codesample_global_prismjs: true,
             toolbar: 'undo redo | blocks | ' +
