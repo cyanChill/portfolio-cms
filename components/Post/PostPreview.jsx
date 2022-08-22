@@ -4,12 +4,13 @@ import Link from "next/link";
 
 import styles from "../../styles/PostPreview.module.css";
 import { postDateFormat } from "../../utils/format";
+import PostInfo from "./PostInfo";
 
-const PostPreview = ({ postData }) => {
+const PostPreview = ({ postData, className, style }) => {
   const router = useRouter();
 
   return (
-    <div className={styles.postCard}>
+    <div className={`${styles.postCard} ${className}`} style={style}>
       <div
         className={styles.thumbnail}
         onClick={() => router.push(`/posts/${postData.slug}`)}
@@ -31,7 +32,7 @@ const PostPreview = ({ postData }) => {
 
       <p className={styles.excerpt}>{postData.excerpt}</p>
 
-      <p className={styles.date}>{postDateFormat(postData.date)}</p>
+      <PostInfo date={postDateFormat(postData.date)} spaceBetween />
     </div>
   );
 };

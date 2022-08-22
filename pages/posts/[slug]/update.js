@@ -32,7 +32,7 @@ const PostUpdatePage = ({ post: jsonPost }) => {
 
   const handleDelete = async () => {
     try {
-      const res = await fetch(`/api/posts/${post.slug}/`, { method: "DELETE" });
+      const res = await fetch(`/api/posts/${post._id}/`, { method: "DELETE" });
 
       if (res.ok) {
         customToast('success', "Succesfully deleted post.");

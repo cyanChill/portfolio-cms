@@ -29,7 +29,7 @@ const CreatePostPage = () => {
 
   return (
     <div className={styles.wrapper}>
-      <h1>Create a Bew Post</h1>
+      <h1>Create a New Post</h1>
       <PostForm onSubmit={handleSubmit} />
     </div>
   );
