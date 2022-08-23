@@ -47,6 +47,7 @@ const UpdatePost = async (req, res) => {
   }
 
   try {
+    const prevPostVersion = await Post.findById(postId);
     const updatedPost = await Post.findByIdAndUpdate(
       postId,
       {
@@ -56,6 +57,11 @@ const UpdatePost = async (req, res) => {
         excerpt: excerpt || "",
         content,
         isPublished,
+        // If we're making this published from unpublished, set a new date
+        date:
+          !prevPostVersion.isPublished && isPublished
+            ? Date.now()
+            : prevPostVersion.date,
       },
       { new: true }
     );
